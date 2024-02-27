@@ -44,6 +44,32 @@ DON'T Copy Paste $#!~
 #### Appropriate Design and stick to it.
 Microservice
 
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 
 ### The wrong way
 ```
