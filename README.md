@@ -89,6 +89,68 @@ terraform % find . -not -path '*/\.*'
 ./modules/rds
 ```
 
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+### The right way
+
+```
+terraform % find . -not -path '*/\.*'
+.
+./iac-project
+./iac-global-module
+./iac-rds-module
+./iac-account
+```
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 ### Remote States
 ```
@@ -118,6 +180,31 @@ atlantis_role = "arn:aws:iam::${account_id}:role/atlantis"
 env = "dev"
 ```
 
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 #### use it
 ```
@@ -126,19 +213,17 @@ module "account" {
   environment   = var.env
   account_id       = var.account_id
 }
-
 module "tags" {
   source          = "git@github.com:sirbeep/iac-module-tags.git"
   name            = "user-db-${var.env}"
-  project         = "PROJECT u"
+  project         = "Make monay!!!"
   terraform       = true
   environment     = var.env
   cost_center     = "700"
   cost_department = "online"
   sub_department  = "Brian"
 }
-
-module "rds_1" {
+module "user-db" {
   source = "git@github.com:sirbeep/iac-module-aurora.git//serverless-cluster:ref=v1.0.0"
   cluster_name = "user-db-${var.env}"
   tags = module.tags.tags
@@ -148,5 +233,7 @@ module "rds_1" {
   vpc_id = tags.outputs.vpc_id
   subnet_id = var.subnet_id
 }
-
+module "signup-queueue" { ..... }
+module "microservice-serviceaccount" { ...... }
+etc...
 ```
