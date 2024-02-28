@@ -9,40 +9,77 @@ Software development best practices applied to Infrastructure as *Code*
 | ------  | ----- | ----- | ----- |
 | 29-02-24 | 0.1 | HackGreenville presentation | Brian Kennedy |
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 ### Introduction
+I'm the guy that answers newbies questioning "What language/tech should I learn to become a developer" with "Math.  Computer Science is Math."  Grasshopper, first snatch this pebble from my hand, then you can learn.  At a previous place I was brought in to take a team doing ancient tech, dreamweaver or somesuch, and teach them modern software development practices and modern language, Ruby on Rails.  I didn't start with Okay lets start memorizing Rails conventions, I started with teaching Functional Programming so that when you need Rails to do some thing you just think of what's the right way to do it and, yup, that's the Rails convention for that thing.   So at ${current-place} when I was asked to build an Infrastructre as Code process, standard and libraries I started with software development best practices for writing *Code*,
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 ### Software Development best practices
 #### Documentation.
 haha.
 #### Keep code simple, DRY.
-Modules
+Modules.  Actually done right already.
 #### Clear definition of requirements.
-Modules
+Modules.  Actually done right already.
 #### Agile, Set small milestones.
 #### Effective tools.
-Atlantis, github
+Atlantis, github.  Presentation 2
 #### Code review and Quality Control
-Environment gates.  github, Atlantis
+Environment gates.  github, Atlantis.   Presentation 2
 #### Install and Deploy Automation
-DON'T Copy Paste $#!~
+DON'T Copy Paste $#!~  What we're talking about today.
 #### Appropriate Design and stick to it.
-Microservice
+Microservice.   What we're talking about today.
 
 &nbsp;
 
@@ -214,7 +251,7 @@ module "account" {
   account_id       = var.account_id
 }
 module "tags" {
-  source          = "git@github.com:sirbeep/iac-module-tags.git"
+  source          = "git@github.com:sirbeep/iac-module-tags.git?ref=v1.0.0"
   name            = "user-db-${var.env}"
   project         = "Make monay!!!"
   terraform       = true
@@ -237,3 +274,33 @@ module "signup-queueue" { ..... }
 module "microservice-serviceaccount" { ...... }
 etc...
 ```
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+### Questions?
+
+1. Yes, the first question is "Okay then, how do you handle all of projects that need to be replanned and reapplied when you update a module or some other global setting if they're spread across many project repositories?"
