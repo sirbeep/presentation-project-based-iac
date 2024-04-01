@@ -5,9 +5,9 @@ Software development best practices applied to Infrastructure as *Code*
 
 ### Version: 0.1 
 ### Revision History
-| Date | Version |	Description |	Author |
-| ------  | ----- | ----- | ----- |
-| 29-02-24 | 0.1 | HackGreenville presentation | Brian Kennedy |
+| Date | Version |	Description |	Author | Recording |
+| ------  | ----- | ----- | ----- | ----- |
+| 29-02-24 | 0.1 | HackGreenville presentation | Brian Kennedy | https://www.youtube.com/watch?v=9I_yclPk_T8 |
 
 &nbsp;
 
@@ -267,8 +267,8 @@ module "user-db" {
 
   region = "us-east-1"
   env = var.env
-  vpc_id = tags.outputs.vpc_id
-  subnet_id = var.subnet_id
+  vpc_id = module.account.vpc_id
+  subnet_id = module.account.subnets[var.subnet]
 }
 module "signup-queueue" { ..... }
 module "microservice-serviceaccount" { ...... }
