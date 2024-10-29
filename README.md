@@ -471,7 +471,7 @@ Once it's approved, you tell atlantis to apply the changes and it does.  Resourc
 
 &nbsp;
 
-We'll now glance at some of the many details you'll find in a more thourough inspection of my [Atlantis](https://github.com/sirbeep/atlantis-pr-pipeline "build repository")
+We'll now glance at some of the many details you'll find in a more thourough inspection of my [Atlantis](https://github.com/sirbeep/atlantis-pr-pipeline) build repository
 &nbsp;
 
 &nbsp;
