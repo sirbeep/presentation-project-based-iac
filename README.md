@@ -7,7 +7,8 @@ Software development best practices applied to Infrastructure as *Code*
 ### Revision History
 | Date | Version |	Description |	Author | Recording |
 | ------  | ----- | ----- | ----- | ----- |
-| 29-02-24 | 0.1 | HackGreenville presentation | Brian Kennedy | https://www.youtube.com/watch?v=9I_yclPk_T8 |
+| 29-02-24 | 0.1 | HackGreenville presentation "You're doing IaC wrong. Project based IaC" | Brian Kennedy | https://www.youtube.com/watch?v=9I_yclPk_T8 |
+| 29-10-24 | 0.2 | Presentation Part 2. "Tools and Quality" | Brian Kennedy |  |
 
 &nbsp;
 
@@ -77,9 +78,9 @@ Atlantis, github.  Presentation 2
 #### Code review and Quality Control
 Environment gates.  github, Atlantis.   Presentation 2
 #### Install and Deploy Automation
-DON'T Copy Paste $#!~  What we're talking about today.
+DON'T Copy Paste $#!~  Presentation 1
 #### Appropriate Design and stick to it.
-Microservice.   What we're talking about today.
+Microservice.   Presentation 1
 
 &nbsp;
 
@@ -275,6 +276,202 @@ module "microservice-serviceaccount" { ...... }
 etc...
 ```
 
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+### Tools
+
+#### Atlantis
+Atlantis is a tool for automating IaC through the PR process, while keeping a clean separation of concerns.  Github does Git stuff, code, PRs, etc... and has no access to an environment to actually create/destroy resources.  Atlantis does.
+
+
+Lets do an IaC PR.   Developer pushes code to the develop branch, does a PR to the dev environment:
+![PR Creation](./assets/PR.png)
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+Atlantis goes ahead and does a plan for what would change in that environment.  It also will replan when it detects a new commit push.
+![atlantis autoplans](./assets/autoplan.png)
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+That plan has all of the details you'd expect from the terraform plan
+![details](./assets/output.png)
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+![Continued](./assets/moreplan.png)
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+Atlantis will not(with the settings I have) apply any changes until someone approves it.  (github settings will control who the someone has to be)
+![approval](./assets/approve.png)
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+Once it's approved, you tell atlantis to apply the changes and it does.  Resources created and no one, including github, had access to the target environment to do it.  All cleanly automated and repeatable and SECURE.
+![apply](./assets/apply.png)
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+We'll now glance at some of the many details you'll find in a more thourough inspection of my [Atlantis](https://github.com/sirbeep/atlantis-pr-pipeline "build repository")
 &nbsp;
 
 &nbsp;
