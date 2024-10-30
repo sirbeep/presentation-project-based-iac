@@ -7,8 +7,8 @@ Software development best practices applied to Infrastructure as *Code*
 ### Revision History
 | Date | Version |	Description |	Author | Recording |
 | ------  | ----- | ----- | ----- | ----- |
-| 29-02-24 | 0.1 | HackGreenville presentation "You're doing IaC wrong. Project based IaC" | Brian Kennedy | https://www.youtube.com/watch?v=9I_yclPk_T8 |
-| 29-10-24 | 0.2 | Presentation Part 2. "Tools and Quality" | Brian Kennedy |  |
+| 29-02-24 | 0.1 | HackGreenville presentation "You're doing IaC wrong. Project based IaC" | Brian Kennedy | [Part 1](https://www.youtube.com/watch?v=9I_yclPk_T8) |
+| 29-10-24 | 0.2 | Presentation Part 2. "Tools and Quality" | Brian Kennedy | [Part 2](https://www.youtube.com/watch?v=XW5J_KGWIAA) |
 
 &nbsp;
 
